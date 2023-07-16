@@ -9,7 +9,16 @@ async function handleLogin(){
     username,
     psw
   }
-  await axios.post("/api/user",data);
+  const res = await axios.post("http://localhost:8080/api/user",data);
+  const token = res.data.token;
+  if(token){
+    localStorage.setItem("token",token);
+    alert("登录成功！");
+    window.location.href = "/";
+  }
+  else{
+    alert("无权限！");
+  }
 }
 
 </script>
@@ -23,7 +32,7 @@ async function handleLogin(){
         <el-input class="psw" type="password" placeholder="请输入密码" v-model="psw" show-password></el-input>
         <el-button type="primary" @click="handleLogin" >提交</el-button>
       </div>
-      
+    
     </div>
   </div>
 </template>
