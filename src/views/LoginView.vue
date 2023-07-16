@@ -37,7 +37,7 @@ async function handleLogin(){
   </div>
 </template>
 
-<style lang="scss" >
+<style lang="scss" scoped>
   .main {
     width: 100vw;
     height: 100vh;
@@ -46,8 +46,6 @@ async function handleLogin(){
     padding: 0;
     align-items: center;
     justify-content: center;
-    background-image: url("../assets/bg.jpg");
-    opacity: 50%;
     >.center{
       background-color: white;
       height: 355px;

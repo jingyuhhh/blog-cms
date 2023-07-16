@@ -1,1 +1,8 @@
+#app {
+  background-image: url("../assets/bg.jpg");
+  opacity: 50%;
+}
 
+a {
+  text-decoration: none;
+}
