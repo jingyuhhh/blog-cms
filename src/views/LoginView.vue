@@ -14,7 +14,7 @@ async function handleLogin(){
   if(token){
     localStorage.setItem("token",token);
     alert("登录成功！");
-    window.location.href = "/";
+    window.location.href = "/add";
   }
   else{
     alert("无权限！");

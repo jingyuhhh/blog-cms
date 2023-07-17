@@ -1,11 +1,19 @@
 <script setup lang="ts">
 import SideBar from '@/components/SideBar.vue';
 import { ref } from 'vue';
+import axios from 'axios';
+import moment from 'moment';
 
 const title = ref('');
 const content = ref('');
-function addArticle() {
-    console.log(title.value, content.value);
+async function addArticle() {
+	await axios.post('http://localhost:8080/api/add', {
+		title: title.value,
+		content: content.value,
+		cat: value.value,
+		date: moment(Date.now()).format('YYYY-MM-DD')
+	});
+    
 }
 const value = ref('');
 const options = [
@@ -22,6 +30,8 @@ const options = [
 				label: '读书笔记',
 		},
 ];
+
+
 
 </script>
 

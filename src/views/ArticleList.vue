@@ -1,5 +1,23 @@
 <script setup lang="ts">
-import SideBar from '@/components/SideBar.vue'
+import SideBar from '@/components/SideBar.vue';
+import axios from 'axios';
+import { ref } from 'vue';
+
+
+const list : any = ref([]);
+
+async function getList() {
+	const rawList = await axios.get('http://localhost:8080/api/articles');
+	list.value = rawList.data;
+	console.log(list.value);
+	
+}
+
+getList();
+
+async function deleteArticle(id:number){
+	await axios.get(`http://localhost:8080/api/delete/${id}`);
+}
 
 
 </script>
@@ -13,16 +31,16 @@ import SideBar from '@/components/SideBar.vue'
 						<span>所有文章</span>
 						
 					</div>
-					<div v-for="o in 11" :key="o" class="text item">
-						{{'列表内容 ' + o }}
-						<el-button style="float: right; padding: 3px 0" type="text">删除</el-button>
+					<div v-for="o in list" :key="o" class="text item">
+						{{o.title}}
+						<el-button @click="deleteArticle(o.id)" style="float: right; padding: 3px 0" type="text">删除</el-button>
 						<el-button style="float: right; padding: 3px 0;" type="text">编辑</el-button>
 					</div>
 					<div class="pagination">
 						<el-pagination
 							background
 							layout="prev, pager, next"
-							:total="100">
+							:total="Math.ceil(list.length / 11)">
 						</el-pagination>
 					</div>
 					
@@ -44,7 +62,6 @@ import SideBar from '@/components/SideBar.vue'
 	display: flex;
 	justify-content: center;
 	margin-top: 20px;
-
 }
 
 .text{
