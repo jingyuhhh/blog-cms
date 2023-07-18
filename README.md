@@ -1,5 +1,11 @@
 # blog-cms
 
+# 这是我的博客后台管理系统
+
+采用jwt+token验证
+
+（做之前还不太懂，做完之后发现其实可以不做后台，在博客中可以直接用jwt+token验证身份，操作也差不多）
+
 This template should help get you started developing with Vue 3 in Vite.
 
 ## Recommended IDE Setup
