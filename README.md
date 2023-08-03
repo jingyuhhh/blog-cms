@@ -1,4 +1,4 @@
-<div align="center">
+<div align="center" id="top">
     <h1>博客后台管理系统</h1>
     
 </div>
