@@ -1,6 +1,8 @@
 #app {
   background-image: url("../assets/bg.jpg");
   opacity: 50%;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 a {

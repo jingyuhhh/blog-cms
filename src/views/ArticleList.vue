@@ -7,16 +7,38 @@ import { ref } from 'vue';
 const list : any = ref([]);
 
 async function getList() {
-	const rawList = await axios.get('http://localhost:8080/api/articles');
+	const rawList = await axios.get('https://www.volcano621.fun/api/articles');
 	list.value = rawList.data;
-	console.log(list.value);
+
 	
 }
 
 getList();
 
+const token = localStorage.getItem('token');
+if(!token) window.location.href = '/';
+
 async function deleteArticle(id:number){
-	await axios.get(`http://localhost:8080/api/delete/${id}`);
+	try{
+		const ans = await axios.get(`https://www.volcano621.fun/api/delete/${id}`,{
+			headers: {
+				Authorization: `${token}`
+			}
+		});
+		if(ans.data.code === 500){
+			alert(ans.data.err.message);
+			return;
+		}
+		else alert('删除成功');
+		
+	}
+	catch(e){
+		alert('删除失败');
+	}
+}
+
+async function changeArticle(id:number){
+	window.location.href = `/change/${id}`;
 }
 
 
@@ -34,7 +56,7 @@ async function deleteArticle(id:number){
 					<div v-for="o in list" :key="o" class="text item">
 						{{o.title}}
 						<el-button @click="deleteArticle(o.id)" style="float: right; padding: 3px 0" type="text">删除</el-button>
-						<el-button style="float: right; padding: 3px 0;" type="text">编辑</el-button>
+						<el-button @click="changeArticle(o.id)" style="float: right; padding: 3px 0;" type="text">编辑</el-button>
 					</div>
 					<div class="pagination">
 						<el-pagination

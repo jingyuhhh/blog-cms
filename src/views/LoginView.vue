@@ -2,6 +2,7 @@
 
 import {ref} from "vue";
 import axios from "axios";
+import router from "@/router";
 const username = ref("");
 const psw = ref("");
 async function handleLogin(){
@@ -9,12 +10,12 @@ async function handleLogin(){
     username,
     psw
   }
-  const res = await axios.post("http://localhost:8080/api/user",data);
+  const res = await axios.post("https://www.volcano621.fun/api/user",data);
   const token = res.data.token;
   if(token){
     localStorage.setItem("token",token);
     alert("登录成功！");
-    window.location.href = "/add";
+    router.push("/list");
   }
   else{
     alert("无权限！");
