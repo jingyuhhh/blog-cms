@@ -1,40 +1,73 @@
-# blog-cms
+<div align="center" id="top">
+    <h1>博客后台管理系统</h1>
+    
+</div>
+<p align="center">
+  <a href="#dart-about">About</a> &#xa0; | &#xa0;
+  <a href="#sparkles-features">Features</a> &#xa0; | &#xa0;
+  <a href="#rocket-technologies">Technologies</a> &#xa0; | &#xa0;
+  <a href="#white_check_mark-requirements">Requirements</a> &#xa0; | &#xa0;
+  <a href="#checkered_flag-starting">Starting</a> &#xa0; | &#xa0;
+  <a href="#memo-license">License</a> &#xa0; | &#xa0;
+  <a href="https://github.com/volcano621" target="_blank">Author</a>
+</p>
 
-This template should help get you started developing with Vue 3 in Vite.
 
-## Recommended IDE Setup
+## :dart: About
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+这个仓库只有后台管理系统的前端，博客前端和后端在<a href="https://github.com/volcano621/blog">blog</a>
 
-## Type Support for `.vue` Imports in TS
+## :sparkles: Features
+:sparkles: 登录（用jwt鉴权）
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin) to make the TypeScript language service aware of `.vue` types.
+:sparkles: 添加文章
 
-If the standalone TypeScript plugin doesn't feel fast enough to you, Volar has also implemented a [Take Over Mode](https://github.com/johnsoncodehk/volar/discussions/471#discussioncomment-1361669) that is more performant. You can enable it by the following steps:
+:sparkles: 删除文章
 
-1. Disable the built-in TypeScript Extension
-    1) Run `Extensions: Show Built-in Extensions` from VSCode's command palette
-    2) Find `TypeScript and JavaScript Language Features`, right click and select `Disable (Workspace)`
-2. Reload the VSCode window by running `Developer: Reload Window` from the command palette.
+**Todo**
 
-## Customize configuration
+:bulb: 监测来访数据
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
 
-## Project Setup
+## :rocket: Technologies
 
-```sh
-npm install
+The following tools were used in this project:
+
+- Vue
+- Typescript
+- Sass
+- Element-plus
+
+## :white_check_mark: Requirements
+
+Before starting :checkered_flag:, you need to have [Git](https://git-scm.com) and [Node](https://nodejs.org/en/) installed.
+
+## :checkered_flag: Starting
+
+```bash
+# Clone this project
+$ git clone https://github.com/volcano621/blog-cms
+
+#Install dependencies
+$ npm install
+
+# Run the project
+$ npm run dev
+
 ```
 
-### Compile and Hot-Reload for Development
 
-```sh
-npm run dev
-```
+## :memo: License
 
-### Type-Check, Compile and Minify for Production
+This project is under license from MIT. For more details, see the [LICENSE](LICENSE.md) file.
 
-```sh
-npm run build
-```
+Made with :heart: by [火山](https://github.com/volcano621)
+
+
+&#xa0;
+
+<a href="#top">Back to top</a>
+
+
+
+
