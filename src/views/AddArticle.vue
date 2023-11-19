@@ -6,6 +6,7 @@ import moment from 'moment';
 
 const title = ref('');
 const content = ref('');
+const domain ='https://blog-volcanos-projects-9b8e1135.vercel.app/';
 
 const token = localStorage.getItem('token');
 if(!token) window.location.href = '/';
@@ -16,7 +17,7 @@ async function addArticle() {
         .replace(/"/g, '""')
         .replace(/\\/g, "\\\\");
     console.log(replacedContent);
-		const ans = await axios.post('https://www.volcano621.fun/api/add', {
+		const ans = await axios.post(domain+'/api/add', {
 			title: title.value,
 			content:replacedContent,
 			cat: value.value,

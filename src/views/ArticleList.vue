@@ -4,10 +4,13 @@ import axios from 'axios';
 import { ref } from 'vue';
 
 
+const domain ='https://blog-volcanos-projects-9b8e1135.vercel.app/';
+
+
 const list : any = ref([]);
 
 async function getList() {
-	const rawList = await axios.get('https://www.volcano621.fun/api/articles');
+	const rawList = await axios.get(domain+'/api/articles');
 	list.value = rawList.data;
 
 	
@@ -20,7 +23,7 @@ if(!token) window.location.href = '/';
 
 async function deleteArticle(id:number){
 	try{
-		const ans = await axios.get(`https://www.volcano621.fun/api/delete/${id}`,{
+		const ans = await axios.get(domain+`/api/delete/${id}`,{
 			headers: {
 				Authorization: `${token}`
 			}

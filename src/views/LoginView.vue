@@ -3,6 +3,7 @@
 import {ref} from "vue";
 import axios from "axios";
 import router from "@/router";
+const domain ='https://blog-volcanos-projects-9b8e1135.vercel.app/';
 const username = ref("");
 const psw = ref("");
 async function handleLogin(){
@@ -10,7 +11,7 @@ async function handleLogin(){
     username,
     psw
   }
-  const res = await axios.post("https://www.volcano621.fun/api/user",data);
+  const res = await axios.post(domain+"/api/user",data);
   const token = res.data.token;
   if(token){
     localStorage.setItem("token",token);
