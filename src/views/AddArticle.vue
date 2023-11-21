@@ -6,7 +6,7 @@ import moment from 'moment';
 
 const title = ref('');
 const content = ref('');
-const domain ='https://blog-volcanos-projects-9b8e1135.vercel.app/';
+const domain ='https://volcano621.fun/';
 
 const token = localStorage.getItem('token');
 if(!token) window.location.href = '/';

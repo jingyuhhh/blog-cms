@@ -4,7 +4,7 @@ import axios from 'axios';
 import { ref } from 'vue';
 
 
-const domain ='https://blog-volcanos-projects-9b8e1135.vercel.app/';
+const domain ='https://volcano621.fun/';
 
 
 const list : any = ref([]);
