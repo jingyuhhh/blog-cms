@@ -4,7 +4,7 @@ import axios from 'axios';
 import { ref } from 'vue';
 
 
-const domain ='https://volcano621.fun/';
+const domain ='https://volcano621.fun';
 
 
 const list : any = ref([]);

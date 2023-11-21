@@ -3,7 +3,7 @@
 import {ref} from "vue";
 import axios from "axios";
 import router from "@/router";
-const domain ='https://volcano621.fun/';
+const domain ='https://volcano621.fun';
 const username = ref("");
 const psw = ref("");
 async function handleLogin(){
